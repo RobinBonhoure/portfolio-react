@@ -1,0 +1,507 @@
+.c-formulaire {
+    position: relative;
+    margin-top : -2vh;
+    z-index : 2;
+
+    .bouton{
+        @include fluid-text(16px, 16px, 1.56, 991px, 1920px);
+        font-family: $font;
+        font-weight: $bold;
+        border-color : transparent;
+        background-color: $sombre;
+        color : $blanc;
+        min-width : 9.6vw;
+        max-width : fit-content;
+        min-height : 5vh;
+        &:hover{
+            border-color : $sombre;
+            background-color: transparent;
+            color : $sombre;
+        }
+
+        @media screen and (max-width:$screen-md) {
+            align-self : center;
+            min-width : 54.2vw;
+            min-height : 7.9vh;
+        } 
+    }
+
+    &_content{
+        position : relative;
+        display : flex;
+        flex-direction: column;
+        gap : 5vh;
+        background-color: $blanc;
+        padding : 5.5vh 4.1vw;
+        height : 100%;
+        background-color: $blanc;
+        box-shadow: 0px 3px 6px #00000028;
+        //transform : rotate(7deg);
+        @media screen and (max-width:$screen-md) {
+            padding : 16.5vh 30px 10.1vh 30px;
+        }
+
+        &-pastille{
+            position : absolute;
+            right : -3.55vw;
+            top : -3.55vw;
+            display : flex;
+            justify-content: center;
+            align-items: center;
+            z-index : 7;
+            @media screen and (max-width:$screen-md) {
+                top : -16vw;
+                right : 30px;
+            }
+    
+            img{
+                width : 7.1vw;
+                height : auto;
+                @media screen and (max-width:$screen-md) {
+                    width : 32vw;
+                }
+    
+                &.img{
+                    position : absolute;
+                    width : 3.6vw;
+                    @media screen and (max-width:$screen-md) {
+                        width : 16.5vw;
+                    }
+                }
+            }
+        }
+
+        &-row{
+            display : flex;
+            justify-content: space-between;
+            gap : 3.3vw;
+            width : 100%;
+            height : 100%;
+            @media screen and (max-width:$screen-md) {
+                flex-direction: column;
+                gap : 3.5vh;
+            }
+        }
+
+        &-column{
+            display : flex;
+            flex-direction: column;
+            gap : 2vh;
+            width : 100%;
+            @media screen and (max-width:$screen-md) {
+                gap : 3.5vh;
+            }
+        }
+
+        &-line{
+            width : 2px;
+            height : 100%;
+            background-color: $bleu;
+            @media screen and (max-width:$screen-md) {
+                display : none;
+            }
+        }
+    }
+    
+
+    &_field {
+        position: relative;
+        display : flex;
+        flex-direction: column;
+        gap : 1vh;
+
+        &.message{
+            height : 100%;
+        }
+
+        &_label {
+            @include fluid-text(16px, 16px, 1.56, 991px, 1920px);
+            font-family: $font;
+            font-weight: $regular;
+            color: $sombre;
+        }
+
+        .form-radio {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 10px;
+
+            input[type=radio],
+            input[type=checkbox] {
+                appearance: none;
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            label {
+                display: inline-block;
+                @include fluid-text(13px, 13px, 1.1, 991px, 1920px);
+                font-family: $font;
+                font-weight: $regular;
+                color: $sombre;
+                cursor: pointer;
+                margin: 0;
+
+                &:after {
+                    display: block;
+                    content: '';
+                    width: 24px;
+                    height: 24px;
+                    border: solid 2px $sombre;
+                    border-radius : 100%;
+                    position: absolute; 
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    z-index: 1;
+                    transition: all .2s ease;
+                }
+
+                &:before {
+                    display: block;
+                    content: '';
+                    width: 12px;
+                    height: 12px;
+                    background: $bleu;
+                    border-radius : 100%;
+                    position: absolute;
+                    left: 8px;
+                    top: 0;
+                    bottom: 0;
+                    z-index: 2;
+                    margin: auto;
+                    transition: all .2s ease;
+                    opacity: 0;
+                }
+            }
+
+            input[type=radio]:checked+label,
+            input[type=checkbox]:checked+label {
+                &:before {
+                    opacity: 1;
+                }
+            }
+        }
+
+        ::-webkit-input-placeholder {
+            color: $sombre;
+            opacity: 1;
+        }
+
+        ::-moz-placeholder {
+            color: $sombre;
+            opacity: 1;
+        }
+
+        ::-ms-placeholder {
+            color: $sombre;
+            opacity: 1;
+        }
+
+        ::-ms-input-placeholder {
+            color: $sombre;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder {
+            color: $sombre;
+            opacity: 1;
+        }
+
+        input[type=tel],
+        input[type=email],
+        input[type=text],
+        textarea {
+            @include fluid-text(16px, 16px, 1.56, 991px, 1920px);
+            font-family: $font;
+            font-weight: $regular;
+            color: $sombre;
+            width: 100%;
+            transition: all .5s ease;
+            border: solid 2px $sombre;
+            color: $sombre;
+            border-radius : 100vmax;
+            font-size: 14px;
+            padding: 0 15px;
+            height: 55px;
+
+            &:focus {
+                background: rgba(255, 255, 255, .15);
+            }
+        }
+
+        textarea {
+            padding-top: 10px;
+            height: 100%;
+            border-radius : 30px;
+        }
+
+        .dropdown-toggle {
+            display: block;
+            width: 100%;
+            position: relative;
+
+            .dropdown-toggle-btn {
+                @include fluid-text(16px, 16px, 1.56, 991px, 1920px);
+                font-family: $font;
+                font-weight: $regular;
+                color: $sombre;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                justify-content: space-between;
+                width: 100%;
+                vertical-align: middle;
+                transition: all .5s ease 0s;
+                border: solid 2px $sombre;
+                color: $sombre;
+                border-radius : 100vmax;
+                padding: 0 15px;
+                height: 55px;
+                padding: 0 15px;
+                cursor: pointer;
+                position: relative;
+
+                &:focus {
+                    color: $blanc;
+                    background: $sombre;
+                    border-color: $sombre;
+                }
+
+                .icon-cursor {
+                    @include icon(2rem);
+                    color : $bleu;
+                    transition : .3s ease;
+                }
+            }
+
+            ul.dropdown {
+                @include position(absolute, 2, 100%, 0, auto, 0);
+                background: $blanc;
+                border-radius : 20px;
+                overflow: hidden;
+                margin-top : 1vh;
+                max-height: 0;
+                transition: all .5s ease;
+
+                li {
+                    max-height: 0;
+                    transition: all .5s ease;
+                    color: $blanc;
+
+                    a:hover {
+                        opacity: .5;
+                    }
+                }
+
+            }
+
+            &.open {
+                a.toggle {
+                    transition-delay: 0s;
+                }
+
+                .icon-cursor {
+                    transform : rotate(180deg)
+                }
+
+                ul.dropdown {
+                    max-height: 320px;
+                    overflow: auto;
+                    background-color: $blanc;
+                    border : 2px solid $sombre;
+                    transition: all .5s ease 0s;
+
+                    &::-webkit-scrollbar{
+                        display : none;
+                    }
+
+                    li {
+                        max-height : 80px;
+                        transition-delay: 0s;                 
+
+                        button{
+                            @include fluid-text(16px, 16px, 1.56, 991px, 1920px);
+                            font-family: $font;
+                            font-weight: $regular;
+                            color: $sombre;
+                            text-align: left;
+                            color: $sombre;
+                            width : 100%;
+                            height : 100%;
+                            padding : 15px;                     
+                            border-bottom : 2px solid $sombre;
+
+                            &:hover{
+                                background-color: $sombre;
+                                color : $blanc;
+                            }
+                        }
+
+                        &:last-child button{
+                            border-bottom : transparent;
+                        }
+                    }
+                }
+            }
+        }
+
+        &::after {
+            margin-top: 0;
+            display: block;
+            content: "";
+            height: 0;
+            opacity: 0;
+            transition: 0.5s all ease-out;
+        }
+
+        &.error::after {
+            height: 15px;
+            margin: 5px;
+            content: attr(data-message);
+            color: $bleu;
+            opacity: 1;
+            font-size: 11px;
+            line-height: 15px;
+            letter-spacing: 0.05em;
+            top: 0;
+            text-align: left;
+        }
+    }
+
+    // FORM FILE UPLOAD
+    &_file {
+        input[type=file] {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            appearance: none;
+            position: absolute;
+        }
+
+        label {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: $sombre;
+            color: $blanc;
+            cursor: pointer;
+            height: 40px;
+            padding: 0 20px;
+            font-size: 14px;
+
+            @media (min-width:$screen-sm) {
+                font-size: 15px;
+                padding: 0 25px;
+                height: 50px;
+            }
+
+            @media (min-width:$screen-lg) {
+                font-size: 16px;
+                padding: 0 30px;
+                height: 60px;
+            }
+
+            &:after,
+            &:before {
+                content: normal;
+                display: none;
+            }
+        }
+
+        .name-file {
+            display: block;
+            max-width: 150px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+
+    /*************************************************
+    // FORMULAIRE / VALIDATION
+    *************************************************/
+
+    &_overlay {
+        @include position(fixed, 1000, 0, 0, 0, 0);
+        background-color: rgba($color: $bleu, $alpha: .8);
+        width: auto;
+        transition: all .6s ease;
+        cursor: pointer;
+
+        @media (max-width:$screen-md) and (min-width: $screen-sm) {
+            width: calc(100% - 30px);
+            margin: auto;
+        }
+
+        &_text {
+            @include position(absolute, 100, 40%, 0, auto, 0);
+            margin: auto;
+            width: 100%;
+            height: auto;
+            min-height: auto;
+            display: block;
+            opacity: 0;
+            transform: translateY(-50%);
+            transition: all .5s ease;
+
+            @media (min-width:$screen-sm) {
+                width: 75%;
+            }
+
+            @media (min-width:$screen-lg) {
+                width: 60%;
+            }
+
+            p {
+                line-height: 1.33;
+                text-align: center;
+                color: $sombre;
+                font-weight: 600;
+                font-size: 16px;
+                padding: 5vw 30px;
+                background: rgba(255, 255, 255, .85);
+
+                @media (min-width:$screen-md) {
+                    font-size: 18px;
+                }
+
+                @media (min-width:$screen-lg) {
+                    font-size: 20px;
+                }
+
+                @media (min-width:$screen-xl) {
+                    font-size: 24px;
+                }
+
+                .icon {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    width: 25px;
+                    height: auto;
+                }
+            }
+
+            &.active {
+                opacity: 1;
+                top: 50%;
+            }
+        }
+
+        &.close {
+            opacity: 0;
+
+            .form-msg {
+                opacity: 0;
+                top: 60%;
+            }
+        }
+
+        &.under {
+            z-index: -1;
+        }
+    }
+}

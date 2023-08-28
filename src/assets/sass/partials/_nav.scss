@@ -1,0 +1,137 @@
+.p-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 104;
+    width: 100%;
+    background-color: $sombre;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    transition: all .3s ease;
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: trans-opacity-bot-100 1s ease .6s forwards;
+    @media screen and (max-width:$screen-md) {
+        height: 74px;
+    }
+
+    &.open {
+        .logo img {
+            opacity: 1!important;
+            pointer-events: all!important;
+        }
+    }
+
+    &.masked {
+        background-color: transparent;
+    }
+
+    .logo img {
+        width: 167px;
+        transition: all .3s ease;
+        @media screen and (max-width:$screen-md) {
+            width: 115px;
+        }
+    }
+
+    &_logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &_menu {
+        display: flex;
+        align-items: center;
+        gap: vw(40px);
+        p {
+            transition: all .3s ease;
+            font-size: 16px;
+        }
+        a:hover p {
+            color: $bleu!important;
+        }
+        .bouton {
+            background-color: $bleu;
+            min-width: unset;
+            border: none;
+            @media screen and (min-width:$screen-md) {
+                &:hover {
+                    color: $bleu;
+                }
+            }
+        }
+        @media screen and (max-width:$screen-md) {
+            display: none;
+        }
+    }
+
+    .bt-menu {
+        width: 39px;
+        height: 39px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+
+        @media screen and (min-width:$screen-md) {
+            display: none;
+        }
+
+        .barre {
+            display: block;
+            width: 100%;
+            background-color: $bleu;
+            height: 2px;
+            position: relative;
+            transform: rotate(0);
+            transition: all .3s ease;
+
+            &:nth-child(1) {
+                top: -9px;
+                transition: all .3s ease;
+            }
+
+            &:nth-child(2) {
+                opacity: 1;
+                transition: all .3s ease;
+            }
+
+            &:nth-child(3) {
+                bottom: -9px;
+                transition: all .3s ease;
+            }
+        }
+
+        &.masked {}
+
+        &.open {
+
+            .barre {
+                background-color: $bleu;
+                transition: all .3s ease;
+                width: 29px;
+
+                &:nth-child(1) {
+                    top: 2px;
+                    transform: rotate(45deg);
+                    transition: top .3s ease, transform .3s ease .2s;
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                    transition: all .1s ease;
+                }
+
+                &:nth-child(3) {
+                    bottom: 2px;
+                    transform: rotate(-45deg);
+                    transition: bottom .3s ease, transform .3s ease .2s;
+                }
+            }
+        }
+    }
+}

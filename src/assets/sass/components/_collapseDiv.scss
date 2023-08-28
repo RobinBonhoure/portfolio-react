@@ -1,0 +1,13 @@
+[js-collapse-wrapper] {
+    >[js-collapse-content] {
+        max-height: 0;
+        opacity: 0;
+        transition: opacity .3s ease, max-height 0.5s cubic-bezier(0, 1, 0, 1);;
+
+        &.open {
+            max-height: 100vh;
+            opacity: 1;
+            transition: opacity .3s ease, max-height 1s ease-in-out;
+        }
+    }
+}

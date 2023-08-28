@@ -1,0 +1,47 @@
+.c-rail_wrapper {
+    position: relative;
+    z-index: 11;
+    white-space: nowrap;
+    display: inline-flex;
+    transform: translateZ(0);
+    overflow: hidden;
+    width: 100%;
+    font-family: $font;
+    font-weight: $semibold;
+    border-top: 1px solid $sombre;
+    border-bottom: 1px solid $sombre;
+    padding: vw(60px) 0;
+    @include fluid-text(89px, 109px, 1, 991px, 1920px);
+    @media screen and (max-width:$screen-md) {
+        font-size: 42px;
+        padding: 34px 0;
+    }
+    .c-rail_group-container {
+        position: relative;
+        white-space: nowrap;
+        display: inline-flex;
+        width: auto;
+    }
+    .c-rail_track-container {
+        display: flex;
+        width: auto;
+        white-space: nowrap;
+    }
+    .c-rail_item,
+    .c-rail_track {
+        color: $sombre;
+        display: inline-block;
+    }
+    .c-rail_item {
+        span {
+            position: relative;
+            display: inline-block;
+            margin-right: vw(37px);
+            @media screen and (max-width:$screen-md) {
+                margin-right: 17px;
+            }
+            padding: 1rem 0;
+            color: $bleu;
+        }
+    }
+}

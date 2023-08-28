@@ -1,0 +1,293 @@
+$screen-xl: 1500px;
+$screen-lg: 1200px;
+$screen-md: 992px;
+$screen-sm: 760px;
+$screen-xs: 480px;
+$screen-xss: 340px;
+
+/*************************************************
+// BOOTSTRAP & VARIABLES
+*************************************************/
+
+$font-family-sans-serif: 'Open Sans',
+Arial,
+sans-serif;
+$font-size-base: 10px;
+$line-height-base: 1;
+$link-hover-color:inherit;
+$link-hover-decoration:none;
+/*************************************************
+// GRID
+*************************************************/
+
+@import 'base/_grid';
+
+/*************************************************
+// FONTS
+*************************************************/
+
+@import 'utilities/_fonts';
+
+/*************************************************
+// MIXINS
+*************************************************/
+
+@import 'base/_mixins';
+
+/*************************************************
+// COULEURS DU SITE
+*************************************************/
+
+@import 'utilities/_colors';
+
+/*************************************************
+// BASE
+*************************************************/
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-variant-ligatures: common-ligatures;
+    -webkit-font-variant-ligatures: common-ligatures;
+}
+
+/*************************************************
+// BASE
+*************************************************/
+
+html {
+    font-size: 5.2px;
+    font-family: $font;
+    color: $noir;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    font-kerning: none;
+
+    &.noscroll {
+        overflow: hidden;
+    }
+
+    @media (min-width: $screen-sm) {
+        font-size: 6.1px;
+    }
+
+    @media (min-width: $screen-md) {
+        font-size: 7.2px;
+    }
+
+    @media (min-width: $screen-lg) {
+        font-size: 8.5px;
+    }
+
+    @media (min-width: $screen-xl) {
+        font-size: 10px;
+    }
+}
+
+body {
+    min-height: 100%;
+    width: 100%;
+    font-family: $font;
+    position: relative;
+    overflow: hidden;
+    background-color: $ciel;
+}
+
+#wrapper {
+    max-width: 100vw;
+    height: 100%;
+    overflow: hidden;
+}
+
+#wrapper-scroll {
+    overflow: hidden;
+}
+
+
+button,
+input,
+textarea {
+    border: none;
+    background: none;
+}
+
+a,
+button {
+    transition: all .3s ease;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a img {
+    border: 0;
+}
+
+a:hover,
+button:hover {
+    text-decoration: none;
+}
+
+img,
+svg {
+    vertical-align: middle;
+    border: none;
+}
+
+b,
+strong {
+    font-family: $font;
+
+}
+
+ul,
+li {
+    list-style: none;
+    list-style-type: none;
+}
+
+textarea {
+    overflow: auto;
+    resize: none;
+}
+
+/*************************************************
+// STYLES DE CARATERES
+*************************************************/
+
+@import 'utilities/_styles-carateres';
+
+
+/*************************************************
+// PROPRIETES TEXTE
+*************************************************/
+
+.underline {
+    text-decoration: underline;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+br:not(.keep) {
+    @media screen and (max-width:$screen-md) {
+        display: none;
+    }
+}
+
+/*************************************************
+// BOUTONS
+*************************************************/
+
+@import 'utilities/_boutons';
+
+/*************************************************
+// CLASS UTILITAIRE
+*************************************************/
+
+.os-scrollbar-handle {
+    background: rgba($color: #05303a, $alpha: 1) !important;
+
+    &.noscroll {
+        opacity: 0 !important;
+        pointer-events: none;
+    }
+
+    @media screen and (max-width:$screen-md) {
+        opacity: 0 !important;
+        pointer-events: none;
+    }
+}
+
+.no-link-desktop {
+    @media screen and (min-width:$screen-md) {
+        pointer-events: none;
+        cursor: initial;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden-pc {
+    @media screen and (min-width:$screen-md) {
+        display: none!important;
+    }
+}
+
+.hidden-mobile {
+    @media screen and (max-width:$screen-md) {
+        display: none !important;
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+
+/*************************************************
+// IMPORT DEPENDENCIES
+*************************************************/
+
+// Dependencies
+@import 'vendor/swiper-bundle.css';
+@import 'vendor/OverlayScrollbars.css';
+
+// Partials
+@import 'partials/_header';
+@import 'partials/_footer';
+@import 'partials/_nav';
+@import 'partials/_menu';
+
+// Pages
+@import 'pages/_accueil';
+@import 'pages/_voyage';
+@import 'pages/_btob';
+@import 'pages/_contact';
+@import 'pages/_legals';
+@import 'pages/_error404';
+
+// Components
+@import 'components/_cookies';
+@import 'components/_formulaire';
+@import 'components/_collapseDiv';
+@import 'components/_railText';
+
+// Utilities
+@import 'utilities/_fonts';
+@import 'utilities/_animations';
+@import 'utilities/_icons';
+
+// Magazine
+@import 'mag/_mag';
+@import 'mag/_form-sort';
+@import 'mag/_actu';
+@import 'mag/_article';
+
+// Carte / Menu restaurant
+@import 'carte/_carte';

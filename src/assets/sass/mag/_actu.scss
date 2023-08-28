@@ -1,0 +1,580 @@
+// ===================================
+// *** ARTICLE CONTENT
+// ===================================
+
+.c-actu {
+    position: relative;
+    padding-bottom: 5rem !important;
+
+    @media screen and (max-width:$screen-md) {
+        padding-bottom: 50px !important;
+    }
+
+    .forme2 {
+        position: absolute;
+        top: calc(100% - 1px);
+        left: 0;
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    // -------------------- ** IMAGE UNE **
+
+    &__cover {
+        position: relative;
+        overflow: hidden;
+        margin-top: 4vw;
+        margin-bottom: 6rem;
+
+        @media screen and (max-width:$screen-md) {
+            margin-bottom: 50px;
+            margin-top: 0;
+        }
+
+        // -------------------- ** TEXT CONTENT **
+
+        &_text {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin-bottom: 4rem;
+
+            @media screen and (max-width:$screen-md) {
+                display: block;
+                margin-bottom: 40px;
+            }
+        }
+
+        &_img {
+            width: 100%;
+            margin-top: 5vw;
+            border: 1px solid $noir;
+
+            @media screen and (max-width:$screen-md) {
+                margin-top: 40px;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    // -------------------- ** TITLE **
+
+    &__title {
+        margin: 0;
+        margin-bottom: 0;
+        @extend %font;
+        color: $noir;
+        font-size: 3rem;
+
+        @media screen and (max-width:$screen-md) {
+            width: 100%;
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+    }
+
+    // -------------------- ** DATE **
+
+    &__date {
+        display: block;
+        font-size: 16px;
+        font-family: $font;
+        font-weight: $medium;
+        color: $noir;
+        margin-top: 10px;
+        margin-bottom: 20px;
+
+        @media (min-width:$screen-md) {
+            font-size: 2rem;
+            margin-top: 0rem;
+            margin-bottom: 4rem;
+        }
+    }
+
+    // -------------------- ** TAGS BUTTONS **
+
+    &__tags {
+        margin-top: 15px;
+    }
+
+    // -------------------- ** TAGS **
+
+    &__tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+        padding: 0 3rem;
+        font-family: $font;
+        font-weight: $medium;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        border: 1px solid $noir;
+        color: $noir;
+        margin-right: 1rem;
+        border-radius: 2rem;
+        margin-bottom: 1rem;
+        transition: all .3s ease;
+
+        @media screen and (max-width:$screen-md) {
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            height: 40px;
+            border-radius: 20px;
+            padding: 0 20px;
+        }
+    }
+
+    // -------------------- ** CATEGORY BUTTON **
+
+    &__category {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 4rem;
+        padding: 0 3rem;
+        font-family: $font;
+        font-weight: $regular;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        border: 1px solid $noir;
+        color: $noir;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        transition: all .3s ease;
+
+        @media screen and (max-width:$screen-md) {
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-size: 12px;
+            height: 40px;
+            padding: 0 10px;
+        }
+    }
+
+    // -------------------- ** PREVIEW TEXT **
+
+    &__preview {
+        font-size: 16px;
+        color: $noir;
+        margin-bottom: 50px;
+        @extend .paragr;
+        font-style: italic;
+
+        br {
+            display: none !important;
+        }
+
+        @media (min-width:$screen-md) {
+            font-size: 2.2rem;
+            margin-bottom: 6rem;
+        }
+    }
+
+    // -------------------- ** SUBTITLE **
+
+    &__subtitle {
+        font-size: 30px;
+        color: $noir;
+        margin: 0;
+        font-family: $font;
+        font-weight: $bold;
+        margin-bottom: 50px;
+
+        @media (min-width:$screen-md) {
+            font-size: 3.5rem;
+            margin-bottom: 6rem;
+
+        }
+    }
+
+    // -------------------- ** TEXT **
+
+    &__text {
+        @extend .paragr;
+        font-size: 16px;
+        margin-bottom: 50px;
+        line-height: 1.6;
+        color: $noir;
+
+        @media (min-width:$screen-md) {
+            font-size: 1.8rem;
+            margin-bottom: 6rem;
+        }
+
+        strong {
+            font-weight: $bold;
+        }
+
+        ul {
+            li {
+                padding-left: 30px;
+                list-style: inside;
+            }
+        }
+
+        br {
+            display: block !important;
+        }
+
+        a {
+            text-decoration: underline;
+            color: $noir;
+            font-weight: $bold;
+        }
+    }
+
+    // -------------------- ** IMAGE **
+
+    &__image {
+        margin-bottom: 50px;
+        border: 1px solid $noir;
+
+        @media screen and (min-width:$screen-md) {
+            margin-bottom: 6rem;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    // -------------------- ** VIDEO **
+
+    &__video {
+        margin-bottom: 50px;
+        padding-bottom: 58%;
+        position: relative;
+
+        @media screen and (min-width:$screen-md) {
+            margin-bottom: 6rem;
+        }
+
+        iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            @include position(absolute, 1, 0, 0, 0, 0);
+        }
+    }
+
+    // -------------------- ** BUTTON **
+
+    &__button {
+        text-align: center;
+        margin-bottom: 50px;
+
+        @media screen and (min-width:$screen-md) {
+            margin-bottom: 6rem;
+        }
+    }
+
+    // -------------------- ** BUTTON **
+
+    &__cta {
+        background-color: $noir;
+        margin-bottom: 6rem;
+        display: flex;
+
+        @media screen and (max-width:$screen-md) {
+            margin-bottom: 50px;
+            display: block;
+        }
+
+        &_img {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            position: relative;
+
+            @media (min-width:$screen-sm) {
+                width: 25.520833333333332vw;
+                overflow: hidden;
+                position: relative;
+                padding: 0;
+                margin-bottom: 0;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        &_text {
+            display: block;
+            width: 100%;
+            font-family: $font;
+            font-weight: $regular;
+            line-height: 1.4;
+            color: $blanc;
+            padding: 25px;
+            font-size: 16px;
+
+            @media (min-width:$screen-sm) {
+                width: calc(100% - 25.520833333333332vw);
+                padding: 4rem;
+                font-size: 1.8rem;
+            }
+        }
+
+        &__title {
+            font-size: 3rem;
+            display: inline-block;
+            margin-bottom: 4rem;
+            color: $noir;
+
+            @media screen and (max-width:$screen-md) {
+                font-size: 20px;
+            }
+        }
+
+        &__content {
+            display: block;
+            margin-bottom: 4rem;
+
+            @media screen and (max-width:$screen-md) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    // -------------------- ** PDF FILE **
+
+    &__pdf {
+        margin-bottom: 6rem;
+        padding-top: 3rem;
+        text-align: center;
+
+        @media screen and (max-width:$screen-md) {
+            margin-bottom: 50px;
+        }
+
+        &_title {
+            display: inline-block;
+            color: $noir;
+            font-weight: $black;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+
+            @media screen and (max-width:$screen-md) {
+                font-size: 18px;
+            }
+        }
+
+        &_button {
+
+            .icon-download {
+                @include icon(20px);
+                margin-left: 10px;
+            }
+        }
+    }
+
+    // -------------------- ** HTML ELEMENT **
+
+    &__html-element {
+        margin-bottom: 6rem;
+
+        @media screen and (max-width:$screen-md) {
+            margin-bottom: 50px;
+        }
+    }
+
+    // -------------------- ** PHOTOS GALLERY **
+
+    &__gallery {
+        height: auto;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 6rem;
+
+        @media screen and (max-width:$screen-md) {
+            overflow: visible;
+        }
+
+        .slider-prev,
+        .slider-next {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 100%;
+            background: $noir;
+            @include position(absolute, 5, 0, auto, 0, 3rem);
+            left: 4rem;
+            margin: auto;
+            font-size: 0;
+            transform: rotate(90deg);
+
+            @media screen and (max-width:$screen-md) {
+                width: 40px;
+                height: 40px;
+                left: -20px;
+            }
+
+            &:before {
+                display: none;
+            }
+
+            &:after {
+                font-family: 'icomoon' !important;
+                speak: never;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                /* Better Font Rendering =========== */
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                content: "\e90b";
+                @include icon(2.4rem);
+                color: $blanc;
+                display: block;
+                margin: auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%)translateY(-50%);
+
+            }
+        }
+
+        .slider-next {
+            right: 4rem;
+            left: auto;
+            transform: none;
+            transform: rotate(-90deg);
+
+            @media screen and (max-width:$screen-md) {
+                right: -20px;
+                left: auto;
+            }
+        }
+
+        .swiper-slide {
+            .wrapper {
+                width: 100%;
+                padding-bottom: 70%;
+                height: 0;
+                position: relative;
+                overflow: hidden;
+
+                img {
+                    position: absolute;
+                    height: 100%;
+                    width: auto;
+                    top: 0;
+                    left: 50%;
+                    transform: translate(-50%, 0%);
+                }
+            }
+        }
+    }
+
+    // -------------------- ** SOCIAL LINKS **
+
+    &__social {
+        margin-top: 8rem;
+
+        @media screen and (max-width:$screen-md) {
+            width: 100%;
+            margin-top: 80px;
+        }
+
+        p {
+            font-weight: $bold;
+        }
+
+
+        &_links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3rem;
+
+
+            .bt-share {
+                width: 4.5rem;
+                height: 4.5rem;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background-color: transparent;
+                border: 1px solid $noir;
+                color: $noir;
+                border-radius: 100%;
+                position: relative;
+
+                @media screen and (max-width:$screen-md) {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                [class^="icon-"] {
+                    @include icon(2.3rem);
+
+                    @media screen and (max-width:$screen-md) {
+                        @include icon(14px);
+                    }
+                }
+
+                &+.bt-share {
+                    margin-left: 20px;
+
+                    @media(min-width:$screen-md) {
+                        margin-left: 2rem;
+                    }
+                }
+
+                &:hover {
+                    opacity: 1 !important;
+                    background-color: $noir;
+                    color: $blanc;
+                    transition: all .3s ease;
+                }
+            }
+
+            &:hover {
+                .bt-share {
+                    opacity: .5;
+                }
+            }
+        }
+    }
+
+    // -------------------- ** SIMILAR ARTICLES **
+
+    &_similar {
+        padding-top: 18.625vw;
+        padding-bottom: 7vw;
+        background-color: #EBEBEB;
+
+        @media screen and (max-width:$screen-md) {
+            padding-top: 120px;
+        }
+
+        &_head {
+            margin-bottom: 5.2vw;
+        }
+
+        &__title {
+            @extend %font;
+            text-transform: uppercase;
+            @include fluid-text(30px, 40px, 1.2, 991px, 1920px);
+        }
+    }
+}

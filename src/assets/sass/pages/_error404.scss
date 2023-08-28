@@ -1,0 +1,111 @@
+.error404 {
+
+    .p-header {
+        display : none;
+    }
+
+    .pre-footer{
+        position : relative;
+        z-index : 4;
+    }
+
+    .erreur-404{
+        position :relative;
+        display : flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width : 100%;
+        height : 100vh;
+        background-color: $sombre;
+        @media screen and (max-width:$screen-md) {
+            gap : 6.5vh;
+            height : 82vh;
+        }
+
+        &_content{
+            display : flex;
+            flex-direction: column;
+            align-items: center;
+            gap : 3.5vh;
+            @media screen and (max-width:$screen-md) {
+                padding : 0 11.7vw;
+            }
+
+            .h1{
+                @include fluid-text(35px, 45px, 1.15, 991px, 1920px);
+                @include fluid-text(25px, 30px, 1.15, 320px, 390px);
+                text-align : center;
+                transform: translateY(100%);
+                opacity: 0;
+                animation : trans-opacity-top-100 .8s ease forwards;
+            }
+
+            p{
+                @include fluid-text(18px, 20px, 1.56, 991px, 1920px);
+                font-family: $font;
+                font-weight: $regular;
+                text-align : center;
+                color : $blanc;
+                transform: translateY(100%);
+                opacity: 0;
+                animation : trans-opacity-top-100 .8s ease .3s forwards;
+            }
+
+            .bouton {
+                @include fluid-text(16px, 16px, 1.56, 991px, 1920px);
+                font-family: $font;
+                font-weight: $bold;
+                background-color: $bleu;
+                color : $sombre;
+                min-width : 11.9vw;
+                max-width : fit-content;
+                min-height : 5vh;
+                border: 1px solid transparent;
+                transform: translateY(100%);
+                opacity: 0;
+                animation : trans-opacity-top-100 .8s ease .6s forwards;
+                &:hover{
+                    background-color: transparent;
+                    border-color : $bleu;
+                    color : $bleu;
+                }
+                @media screen and (max-width:$screen-md) {
+                    min-width : 54.2vw;
+                    min-height : 7.9vh;
+                }    
+            }
+        }
+
+        &_img{
+            position : relative;
+            width : 100%;
+            transform : translateY(100%) scale(0);
+            transform-origin : bottom;
+            will-change : transform;
+            animation : scaleEarth 2s ease .2s forwards;
+            z-index : 1;
+            img{
+                width : 100%;
+                height : auto;
+            }
+        }
+
+        .logomark {
+            position: absolute;
+            z-index: 1;
+            right: 0;
+            top : 50%;
+            transform: translate(50%, -50%);
+            width: vw(724px);
+            opacity: 0;
+            animation: opacity 1s ease .8s forwards;
+            img {
+                width: 100%;
+            }
+            @media screen and (max-width:$screen-md) {
+                display: none;
+            }
+        }
+    }
+}
