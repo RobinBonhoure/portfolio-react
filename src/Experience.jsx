@@ -9,27 +9,31 @@ import FireBall from './features/FireBall.jsx'
 
 export default function Experience() {
     const [balls, setBall] = useState([])
+    const [bossStage, setBossStage] = useState(1)
 
     const addBall = () => {
-        console.log(balls)
         let x = (Math.random() - 0.5) * 5.5
-        let y = (Math.random() + 2) * 1
-        let z = (Math.random() - 2) * 1
-
-        console.log(x, y, z)
-
+        let y = 0.5
+        let z = (Math.random() - 2)
         setBall([...balls, <FireBall key={balls.length} position={[x, y, z]} velocity={Math.random() / 100} />])
     }
 
     const blocksCount = useGame((state) => state.blocksCount)
     const blocksSeed = useGame(state => state.blocksSeed)
 
-    useEffect(() => {
-    }, [])
-    
-    setTimeout(() => {
-        addBall()
-    }, 2000)
+
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         addBall()
+    //     }, 1000)
+    //     return () => {
+    //         clearInterval(interval)
+    //     }
+    // }, [])
+
+    // setTimeout(() => {
+    //             addBall()
+    // }, 2000)
 
 
 
@@ -41,7 +45,7 @@ export default function Experience() {
             <Lights />
             <Level count={blocksCount} seed={blocksSeed} />
             <Player />
-            <Boss />
+            {/* <Boss bossStage={bossStage} /> */}
             {[...balls]}
         </Physics>
 

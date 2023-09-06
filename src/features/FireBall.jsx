@@ -15,12 +15,16 @@ export default function FireBall(props) {
     
 
 
-    useFrame((state, delta) => {
-        setTimeout(() => {
-            body.current.applyImpulse(impulse, true);
-            body.current.applyTorqueImpulse(torque)
-        }, 1000)
-    })
+    // useFrame((state, delta) => {
+    // })
+
+
+    useEffect(() => {
+        body.current.applyImpulse(impulse, true);
+        body.current.applyTorqueImpulse(torque)
+        return () => {
+        }
+    }, [])
 
     return <RigidBody
         ref={body}

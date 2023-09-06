@@ -66,6 +66,7 @@ export default function Player()
         return () =>
         {
             unsubscribeReset()
+            unsubscribeDash()
             unsubscribeJump()
             unsubscribeAny()
         }
@@ -115,9 +116,6 @@ export default function Player()
         * Phases
         */
         const bodyPosition = body.current.translation()
-        if(bodyPosition.z < - (blocksCount * 4 + 2))
-            end()
-
         if(bodyPosition.y < - 4)
             restart()
     })
@@ -126,11 +124,11 @@ export default function Player()
         ref={ body }
         canSleep={ false }
         colliders="ball"
-        restitution={ 0.2 }
+        restitution={ 0.4 }
         friction={ 1 } 
         linearDamping={ 0.5 }
         angularDamping={ 0.5 }
-        position={ [ 0, 1, 0 ] }
+        position={ [ 0, 2, 2 ] }
     >
         <mesh castShadow>
             <icosahedronGeometry args={ [ 0.3, 100 ] } />
